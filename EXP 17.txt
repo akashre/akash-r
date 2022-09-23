@@ -1,0 +1,7 @@
+mysql> SELECT REPEAT("RAKESH",2);
++--------------------+
+| REPEAT("RAKESH",2) |
++--------------------+
+| RAKESHRAKESH       |
++--------------------+
+1 row in set (0.00 sec)
