@@ -1,0 +1,74 @@
+mysql> create table stu_progress(stu_no int(10),stu_name varchar(30),subject varchar(40),marks int(20));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> describe stu_progress;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| stu_no   | int(10)     | YES  |     | NULL    |       |
+| stu_name | varchar(30) | YES  |     | NULL    |       |
+| subject  | varchar(40) | YES  |     | NULL    |       |
+| marks    | int(20)     | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+4 rows in set (0.03 sec)
+
+mysql> insert into stu_progress values(199,'rakesh','maths',19),(121,'blessing','sicial',87),(432,'akash','science',99);
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select*from stu_progress;
++--------+----------+---------+-------+
+| stu_no | stu_name | subject | marks |
++--------+----------+---------+-------+
+|    199 | rakesh   | maths   |    19 |
+|    121 | blessing | sicial  |    87 |
+|    432 | akash    | science |    99 |
++--------+----------+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> alter table stu_progress
+    -> add stu_depart varchar(100);
+Query OK, 3 rows affected (0.03 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> insert into stu_progress  vaules(1211,'gokul','dbms',100);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'vaules(1211,'gokul','dbms',100)' at line 1
+mysql> insert into stu_progress  vaules(1211,'gokul','dbms',100,'it');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'vaules(1211,'gokul','dbms',100,'it')' at line 1
+mysql> select*from stu_progress;
++--------+----------+---------+-------+------------+
+| stu_no | stu_name | subject | marks | stu_depart |
++--------+----------+---------+-------+------------+
+|    199 | rakesh   | maths   |    19 | NULL       |
+|    121 | blessing | sicial  |    87 | NULL       |
+|    432 | akash    | science |    99 | NULL       |
++--------+----------+---------+-------+------------+
+3 rows in set (0.00 sec)
+
+mysql> describe stu_progress;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| stu_no     | int(10)      | YES  |     | NULL    |       |
+| stu_name   | varchar(30)  | YES  |     | NULL    |       |
+| subject    | varchar(40)  | YES  |     | NULL    |       |
+| marks      | int(20)      | YES  |     | NULL    |       |
+| stu_depart | varchar(100) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> insert into stu_progress  vaules(1211,'gokul','dbms',100,'it');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'vaules(1211,'gokul','dbms',100,'it')' at line 1
+mysql> insert into stu_progress  values(1211,'gokul','dbms',100,'it');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select*from stu_progress;
++--------+----------+---------+-------+------------+
+| stu_no | stu_name | subject | marks | stu_depart |
++--------+----------+---------+-------+------------+
+|    199 | rakesh   | maths   |    19 | NULL       |
+|    121 | blessing | sicial  |    87 | NULL       |
+|    432 | akash    | science |    99 | NULL       |
+|   1211 | gokul    | dbms    |   100 | it         |
++--------+----------+---------+-------+------------+
+4 rows in set (0.00 sec)
