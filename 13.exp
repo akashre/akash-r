@@ -1,0 +1,38 @@
+1)
+ select * from  faculty2;
++-----------+------------+------------+
+| name      | doj        | department |
++-----------+------------+------------+
+| raju      | 2003-04-06 | it         |
+| raja      | 2003-04-06 | cse        |
+| santhoash | 2004-04-06 | aids       |
+| gokul     | 2005-04-06 | aids       |
++-----------+------------+------------+
+4 rows in set (0.00 sec)
+
+mysql> commit;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> select*from faculty2;
++-----------+------------+------------+
+| name      | doj        | department |
++-----------+------------+------------+
+| raja      | 2003-04-06 | cse        |
+| santhoash | 2004-04-06 | aids       |
+| gokul     | 2005-04-06 | aids       |
++-----------+------------+------------+
+3 rows in set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.00 sec)
+
+select * from  faculty2;
++-----------+------------+------------+
+| name      | doj        | department |
++-----------+------------+------------+
+| raju      | 2003-04-06 | it         |
+| raja      | 2003-04-06 | cse        |
+| santhoash | 2004-04-06 | aids       |
+| gokul     | 2005-04-06 | aids       |
++-----------+------------+------------+
+4 rows in set (0.00 sec)
