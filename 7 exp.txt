@@ -1,0 +1,38 @@
+1)
+
+mysql> select subject,mark from mark1 where mark>80;
++---------+------+
+| subject | mark |
++---------+------+
+| c       |   85 |
+| c++     |   85 |
++---------+------+
+2 rows in set (0.00 sec)
+
+
+2)mysql> select count(assignmentmarks)>1,name from assignment;
++--------------------------+--------+
+| count(assignmentmarks)>1 | name   |
++--------------------------+--------+
+|                        1 | rakesh |
++--------------------------+--------+
+1 row in set (0.00 sec)
+
+3)
+mysql> select name,max(doj) as recently_joined from faculty2;
++------+-----------------+
+| name | recently_joined |
++------+-----------------+
+| raju | 2005-04-06      |
++------+-----------------+
+1 row in set (0.00 sec)4
+
+4)mysql> select subject,assignmentmarks from assignment where assignmentmarks>56.667;
++---------+-----------------+
+| subject | assignmentmarks |
++---------+-----------------+
+| phy     |              70 |
+| phy     |              80 |
++---------+-----------------+
+2 rows in set (0.00 sec)
+
