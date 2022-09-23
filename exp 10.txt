@@ -1,0 +1,14 @@
+1)
+
+mysql> create view std_view as select reg_no, stu_name,phone_num from student1;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from std_view;
++-----------+----------+-----------+
+| reg_no    | stu_name | phone_num |
++-----------+----------+-----------+
+| 192121123 | student4 |     98834 |
+| 192121123 | student3 |     98834 |
+| 192121123 | student2 |     98834 |
++-----------+----------+-----------+
+3 rows in set (0.00 sec)
