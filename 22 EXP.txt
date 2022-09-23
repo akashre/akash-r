@@ -1,0 +1,43 @@
+CREATE TABLE BOOKS(BNO INT(100),BNAME VARCHAR(100),PUB_NAME VARCHAR(100),PUB_COUNTRY VARCHAR(100));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> DESCRIBE BOOKS;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| BNO         | int(100)     | YES  |     | NULL    |       |
+| BNAME       | varchar(100) | YES  |     | NULL    |       |
+| PUB_NAME    | varchar(100) | YES  |     | NULL    |       |
+| PUB_COUNTRY | varchar(100) | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+mysql> INSERT INTO BOOKS VALUES(1,'MIND YOUR OWN BUISSNESS','BLESSING','INDIA'),(2,'LIFE STORY','RAKESH','INDIA');
+Query OK, 2 rows affected (0.00 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> SELECT*FROM BOOKS;
++------+-------------------------+----------+-------------+
+| BNO  | BNAME                   | PUB_NAME | PUB_COUNTRY |
++------+-------------------------+----------+-------------+
+|    1 | MIND YOUR OWN BUISSNESS | BLESSING | INDIA       |
+|    2 | LIFE STORY              | RAKESH   | INDIA       |
++------+-------------------------+----------+-------------+
+2 rows in set (0.00 sec)
+
+mysql> UPDATE BOOKS
+    -> SET PUB_NAME='AKASH' WHERE BNO=1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT*FROM BOOKS
+    -> ;
++------+-------------------------+----------+-------------+
+| BNO  | BNAME                   | PUB_NAME | PUB_COUNTRY |
++------+-------------------------+----------+-------------+
+|    1 | MIND YOUR OWN BUISSNESS | AKASH    | INDIA       |
+|    2 | LIFE STORY              | RAKESH   | INDIA       |
++------+-------------------------+----------+-------------+
+2 rows in set (0.00 sec)
+
+mysql>
