@@ -1,0 +1,21 @@
+1)
+
+select course_name,reg_no,stu_name from student1 where course_name in (select course_name from course1);
++-------------+-----------+----------+
+| course_name | reg_no    | stu_name |
++-------------+-----------+----------+
+| maths       | 192121123 | student4 |
+| dbms        | 192121123 | student3 |
++-------------+-----------+----------+
+2 rows in set (0.01 sec)
+
+2)
+
+ select course_name,coursescore from student1 where coursescore>(select avg(coursescore)from student1);
++-------------+-------------+
+| course_name | coursescore |
++-------------+-------------+
+| maths       |          51 |
+| dbms        |          59 |
++-------------+-------------+
+2 rows in set (0.00 sec)
