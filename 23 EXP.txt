@@ -1,0 +1,35 @@
+mysql> INSERT INTO HOSPITAL VALUES('RAKESH','2004.06.7','2004.06.9'),('BLESSING','2005.06.9','2022.09.22');
+Query OK, 2 rows affected (0.00 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> SELECT*FROM HOSPIATL;
+ERROR 1146 (42S02): Table 'employee.hospiatl' doesn't exist
+mysql> SELECT*FROM HOSPITAL;
++----------+--------------+----------------+
+| P_NAME   | ADMITED_DATE | DISCHARGE_DATE |
++----------+--------------+----------------+
+| RAKESH   | 2004-06-07   | 2004-06-09     |
+| BLESSING | 2005-06-09   | 2022-09-22     |
++----------+--------------+----------------+
+2 rows in set (0.00 sec)
+
+mysql> DELETE NAME FROM HOSPITAL WHERE NAME=RAKESH;
+ERROR 1109 (42S02): Unknown table 'name' in MULTI DELETE
+mysql> DELETE NAME FROM HOSPITAL WHERE NAME='RAKESH';
+ERROR 1109 (42S02): Unknown table 'name' in MULTI DELETE
+mysql> DELETE NAME FROM HOSPITAL WHERE P_NAME='RAKESH';
+ERROR 1109 (42S02): Unknown table 'name' in MULTI DELETE
+mysql> DELETE P_NAME FROM HOSPITAL WHERE P_NAME='RAKESH';
+ERROR 1109 (42S02): Unknown table 'p_name' in MULTI DELETE
+mysql> DELETE P_NAME FROM HOSPITAL WHERE ADMITED_DATE='2004.06.07';
+ERROR 1109 (42S02): Unknown table 'p_name' in MULTI DELETE
+mysql> DELETE  FROM HOSPITAL WHERE P_NAME='RAKESH';
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT*FROM HOSPITAL;
++----------+--------------+----------------+
+| P_NAME   | ADMITED_DATE | DISCHARGE_DATE |
++----------+--------------+----------------+
+| BLESSING | 2005-06-09   | 2022-09-22     |
++----------+--------------+----------------+
+1 row in set (0.00 sec)
